@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('school_id');
             $table->string('customer_name', 64);
             $table->string('phone_number', 16);
-            $table->string('e_mail', 64);
+            $table->string('email', 64);
             $table->date('date');
             $table->time('time_start');
             $table->time('time_end');

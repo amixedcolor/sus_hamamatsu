@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('school_id');
-            $table->boolean('is_gym');
-            $table->boolean('is_ground');
-            $table->boolean('is_parking');
+            $table->boolean('is_having_gym');
+            $table->boolean('is_having_ground');
+            $table->boolean('is_having_parking');
         });
     }
 
