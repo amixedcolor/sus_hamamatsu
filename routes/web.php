@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SchoollistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,17 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+Route::get('/school-list', function () {
+    return view('school-list');
+});
+
+
+Route::get('/school-details', [SchoollistController::class, 'index'])->name('/school-details');
 Route::get('/school-details', function () {
     return view('school-details');
 })->name('school-details');
