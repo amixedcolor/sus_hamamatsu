@@ -18,50 +18,62 @@
     </div>
 
     <div class="py-10 text-left">
-        <span class="font-bold text-xl inline-block relative inline-block ml-24">
+        <span class="font-bold text-xl inline-block relative inline-block mx-24">
         {{ __('費用（1時間）') }}
             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </span>
         <br>
         <br>
-        <h4 class="font-bold text-base ml-24">
+        <h4 class="font-bold text-base mx-24">
             5000円
         </h4>
     </div>
 
     <div class="py-10 text-left">
-        <span class="font-bold text-xl inline-block relative inline-block ml-24">
+        <span class="font-bold text-xl inline-block relative inline-block mx-24">
         {{ __('設備') }}
             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </span>
         <br>
         <br>
-        <h4 class="font-bold text-base ml-24">
+        <h4 class="font-bold text-base mx-24">
             設備設備設備設備設備
         </h4>
     </div>
 
     <div class="py-10 text-left">
-        <span class="font-bold text-xl inline-block relative inline-block ml-24">
+        <span class="font-bold text-xl inline-block relative inline-block mx-24">
         {{ __('貸出時間') }}
             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </span>
         <br>
         <br>
-        <h4 class="font-bold text-base ml-24">
+        <h4 class="font-bold text-base mx-24">
             X〜Y
         </h4>
     </div>
 
     <div class="py-10 text-left">
-        <span class="font-bold text-xl inline-block relative inline-block ml-24">
+        <span class="font-bold text-xl inline-block relative inline-block mx-24">
         {{ __('連絡先') }}
             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </span>
         <br>
         <br>
-        <h4 class="font-bold text-base ml-24">
+        <h4 class="font-bold text-base mx-24">
             ○○○-○○○○-○○○○
+        </h4>
+    </div>
+
+    <div class="mb-4">
+        <span for="body" class="font-bold text-xl inline-block relative inline-block mx-24">
+            備考
+            <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
+        </span>
+        <br>
+        <br>
+        <h4 class="font-bold text-base mx-24">
+            備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考
         </h4>
     </div>
 
