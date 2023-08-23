@@ -16,9 +16,14 @@ class HeldEventImageFactory extends Factory
      */
     public function definition(): array
     {
+        $path = fake()->image(null, 1920, 1080, 'poster');
+        $bin = file_get_contents($path);
+
+        unlink($path);
+
         return [
             'held_event_id' => \App\Models\HeldEvent::factory(),
-            'data' => fake()->image(null, 1920, 1080, 'poster'),
+            'data' => $bin,
         ];
     }
 }
