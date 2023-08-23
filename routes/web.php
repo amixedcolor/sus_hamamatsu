@@ -27,6 +27,10 @@ Route::get('/school-details', function () {
     return view('school-details');
 })->name('school-details');
 
+Route::get('/school-book', function () {
+    return view('school-book');
+})->name('school-book');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
