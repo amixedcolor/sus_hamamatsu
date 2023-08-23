@@ -1,5 +1,6 @@
 <x-app-layout>
     <body>
+        
         <div style="padding:30px 0px 0px 30px;">
             <h2 style="
             border-bottom:5px solid;
