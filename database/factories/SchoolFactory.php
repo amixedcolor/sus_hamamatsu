@@ -21,7 +21,7 @@ class SchoolFactory extends Factory
             'price_per_hour' => fake()->randomNumber(),
             'rentable_time_start' => fake()->time('H:i'),
             'rentable_time_end' => fake()->time('H:i'),
-            'contact' => '電話番号: ' . fake()->phoneNumber() . '\n' . 'E-mail: ' . fake()->email(),
+            'contact' => '電話番号: ' . fake()->phoneNumber() . "\n" . 'E-mail: ' . fake()->email(),
             'terms' => fake()->text(2048),
             'note' => fake()->text(512),
         ];
