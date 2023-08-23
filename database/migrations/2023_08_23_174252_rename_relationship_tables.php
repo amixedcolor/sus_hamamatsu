@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::rename('held_events_bookings', 'held_event_booking');
+        Schema::rename('held_events_bookings', 'booking_held_event');
     }
 
     /**
@@ -19,6 +19,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::rename('held_event_booking', 'held_events_bookings');
+        Schema::rename('booking_held_event', 'held_events_bookings');
     }
 };
