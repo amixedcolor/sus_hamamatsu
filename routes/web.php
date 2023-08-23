@@ -30,6 +30,10 @@ Route::get('/school-list', function () {
 
 
 Route::get('/', [SchoollistController::class, 'index'])->name('/');
+Route::get('/school-details', function () {
+    return view('school-details');
+})->name('school-details');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
