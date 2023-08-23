@@ -19,7 +19,7 @@
             gap: 30px 30px;  
             ">
                 @for ($i = 0; $i < 10; $i++)
-                    <a href="{{ url('/') }}">
+                    <a href="{{ url('/school-details') }}">
                         <div style="
                         width:400px; height:400px;
                         border:1px solid black;

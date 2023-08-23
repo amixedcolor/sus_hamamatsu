@@ -29,7 +29,7 @@ Route::get('/school-list', function () {
 });
 
 
-Route::get('/', [SchoollistController::class, 'index'])->name('/');
+Route::get('/school-details', [SchoollistController::class, 'index'])->name('/school-details');
 Route::get('/school-details', function () {
     return view('school-details');
 })->name('school-details');

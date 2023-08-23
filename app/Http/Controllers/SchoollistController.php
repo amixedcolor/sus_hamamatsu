@@ -9,6 +9,6 @@ class SchoollistController extends Controller
     public function index()
     {
         //表示させたいviewを指定させる
-        return view('home');
+        return view('school-details');
     }
 }
