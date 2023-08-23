@@ -18,4 +18,5 @@ class SelectedFacility extends Model
     public function booking(): BelongsTo {
         return $this->belongsTo(Booking::class);
     }
+
 }
