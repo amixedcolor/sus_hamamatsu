@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use \App\Models;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,12 +13,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Booking::factory(10)->create();
-        \App\Models\Facility::factory(10)->create();
-        \App\Models\HeldEvent::factory(10)->create();
-        \App\Models\HeldEventImage::factory(10)->create();
-        \App\Models\School::factory(10)->create();
-        \App\Models\SchoolImage::factory(10)->create();
-        \App\Models\SelectedFacility::factory(10)->create();
+        Models\School::factory(10)
+            ->has(Models\SchoolImage::factory(1))
+            ->has(Models\Facility::factory(1))
+            ->create();
+
+        $bookings = Models\Booking::factory(10)
+            ->has(Models\SelectedFacility::factory(1))
+            ->create();
+
+        Models\HeldEvent::factory(10)
+            ->has(Models\HeldEventImage::factory(1))
+            ->hasAttached($bookings)
+            ->create();
     }
 }
