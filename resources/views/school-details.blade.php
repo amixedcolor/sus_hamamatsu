@@ -7,7 +7,7 @@
 
     <div class="py-10 text-center">
         <h2 class="font-bold text-xl inline-block relative inline-block bg-orange-500 text-white p-2 rounded">
-        {{ __('浜松市立第一小学校') }}
+            {{ __('浜松市立第一小学校') }}
         </h2>
     </div>
 
@@ -20,8 +20,8 @@
     <div class="py-10 text-left">
         <h3 class="font-bold text-xl inline-block relative inline-block mx-24">
         {{ __('費用（1時間）') }}
-            <h3 class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></h3>
-        </sph3an>
+            <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
+        </h3>
         <br>
         <br>
         <p class="font-bold text-base mx-24">
@@ -32,7 +32,7 @@
     <div class="py-10 text-left">
         <h3 class="font-bold text-xl inline-block relative inline-block mx-24">
         {{ __('設備') }}
-            <h3 class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></h3>
+            <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </h3>
         <br>
         <br>
@@ -44,7 +44,7 @@
     <div class="py-10 text-left">
         <h3 class="font-bold text-xl inline-block relative inline-block mx-24">
         {{ __('貸出時間') }}
-            <h3 class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></h3>
+            <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </h3>
         <br>
         <br>
@@ -56,7 +56,7 @@
     <div class="py-10 text-left">
         <h3 class="font-bold text-xl inline-block relative inline-block mx-24">
         {{ __('連絡先') }}
-            <h3 class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></h3>
+            <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </h3>
         <br>
         <br>
@@ -68,7 +68,7 @@
     <div class="mb-4">
         <h3 for="body" class="font-bold text-xl inline-block relative inline-block mx-24">
             備考
-            <h3 class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></h3>
+            <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </h3>
         <br>
         <br>
