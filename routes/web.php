@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SchoollistController;
+use App\Http\Controllers\HeaderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,15 +26,15 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/school-list', function () {
+Route::get('/schools', function () {
     return view('school-list');
 });
 
-
-Route::get('/school-details', [SchoollistController::class, 'index'])->name('/school-details');
-Route::get('/school-details', function () {
+Route::get('/', [HeaderController::class, 'index'])->name('/');
+Route::get('/schools/ID', [SchoollistController::class, 'index'])->name('/schools/ID');
+Route::get('/schools/ID', function () {
     return view('school-details');
-})->name('school-details');
+})->name('schools/ID');
 
 
 Route::middleware('auth')->group(function () {

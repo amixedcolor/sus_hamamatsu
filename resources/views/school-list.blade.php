@@ -1,4 +1,5 @@
 <x-app-layout>
+
     <body>
         
         <div style="padding:30px 0px 0px 30px;">
@@ -20,7 +21,7 @@
             gap: 30px 30px;  
             ">
                 @for ($i = 0; $i < 10; $i++)
-                    <a href="{{ url('/school-details') }}">
+                    <a href="{{ url('/schools/ID') }}" style="text-decoration: none; color:black">
                         <div style="
                         width:400px; height:400px;
                         border:1px solid black;
