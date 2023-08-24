@@ -18,4 +18,8 @@ class SchoolImage extends Model
     public function school(): BelongsTo {
         return $this->belongsTo(School::class);
     }
+
+    public function convertToBase64(): string {
+        return 'data:image/png;base64,' . base64_encode($this->data);
+    }
 }
