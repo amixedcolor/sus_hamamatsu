@@ -11,11 +11,10 @@ class SchoolController extends Controller
     {
         return view('school-list', ['schools' => School::with(['schoolImages'])->get()]);
     }
-    
+
     public function show($id)
     {
         $school_d = School::with(['schoolImages','facility'])->Find($id);
-        // dd($school_d);
         return view('school-details', ['school' => $school_d]);
     }
 }
