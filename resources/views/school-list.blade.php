@@ -32,7 +32,7 @@
                                 width:350px; height:230px;
                                 border:1px solid black;
                                 background-image:url({{ $school->schoolImages->first()?->convertToBase64() ?? '' }});
-                                " src="">
+                                ">
                                 {{ $school->name }}
                             </h2>
                         </div>
