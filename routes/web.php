@@ -39,6 +39,25 @@ Route::get('/school-book', function () {
     return view('school-book');
 })->name('school-book');
 
+Route::get('/question-of-second', function () {
+    return view('reccomend/home-2');
+})->name('question-of-second');
+
+Route::get('/question-of-third', function () {
+    return view('reccomend/home-3');
+})->name('question-of-third');
+
+Route::get('/question-of-fourth', function () {
+    return view('reccomend/home-4');
+})->name('question-of-fourth');
+
+Route::get('/question-of-fifth', function () {
+    return view('reccomend/home-5');
+})->name('question-of-fifth');
+
+Route::get('/school-details/0', function () {
+    return view('reccomend/reccomend-school-detail');
+})->name('school-details/0');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
