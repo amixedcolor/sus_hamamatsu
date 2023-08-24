@@ -1,11 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\SchoollistController;
 use App\Http\Controllers\HeaderController;
+use App\Models\School;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +39,15 @@ Route::get('/schools/ID', function () {
     return view('school-details');
 })->name('schools/ID');
 
-Route::get('/school-book', function () {
-    return view('school-book');
-})->name('school-book');
+Route::get('/schools/{id}/booking-creation', function (string $id) {
+    return view('school-book', ['school' => School::find($id)]);
+})->name('school-book-creation');
 
+Route::post('/schools/{id}/booking-confirmation', function (Request $req, string $id) {
+    return view('school-book-confirm', ['school' => School::find($id), 'params' => $req->request->all()]);
+})->name('school-book-confirmation');
+
+Route::post('/schools/{id}/booking-completion', [BookingController::class, 'store'])->name('school-book-completion');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
