@@ -11,11 +11,7 @@
         </h2>
     </div>
 
-    <div class="container mx-auto w-96 h-96 bg-slate-600">
-        <p class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            {{ $school->image }}
-        </p>
-    </div>
+    <div class="container mx-auto w-96 h-96 bg-slate-600" style="background-image: url({{ $school->schoolImages->first()?->convertToBase64() }})"></div>
 
     <div class="py-10 text-left">
         <h3 class="font-bold text-xl inline-block relative inline-block mx-24">
