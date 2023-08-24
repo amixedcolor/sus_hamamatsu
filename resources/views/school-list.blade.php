@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <body>
-        
+
         <div style="padding:30px 0px 0px 30px;">
             <h2 style="
             border-bottom:5px solid;
@@ -18,26 +18,26 @@
             display:flex;
             justify-content:space-between;
             flex-wrap: wrap;
-            gap: 30px 30px;  
+            gap: 30px 30px;
             ">
-                @for ($i = 0; $i < 10; $i++)
-                    <a href="{{ url('/schools/ID') }}" style="text-decoration: none; color:black">
+                @foreach ($schools as $school)
+                    <a href="{{ url('/schools/' . $school->id) }}" style="text-decoration: none; color:black">
                         <div style="
                         width:400px; height:400px;
                         border:1px solid black;
                         ">
-                            <h2 style="
+                            <img style="
                                 padding:230px 0 0 0;
                                 margin:25px 25px 0 25px;
                                 width:350px; height:230px;
                                 border:1px solid black;
-                                background-color:gray;
-                            "> 
-                            aaaaaaaaaaaaaaa 
+                                background-image:url({{ $school->schoolImages->first()?->convertToBase64() ?? '' }});
+                                " src="">
+                                {{ $school->name }}
                             </h2>
                         </div>
                     </a>
-                @endfor
+                @endforeach
             </div>
         </div>
     </body>

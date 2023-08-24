@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\SchoollistController;
 use App\Http\Controllers\HeaderController;
 
@@ -26,9 +27,7 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/schools', function () {
-    return view('school-list');
-});
+Route::get('/schools', [SchoolController::class, 'index'])->name('schools');
 
 Route::get('/', [HeaderController::class, 'index'])->name('/');
 Route::get('/schools/ID', [SchoollistController::class, 'index'])->name('/schools/ID');
