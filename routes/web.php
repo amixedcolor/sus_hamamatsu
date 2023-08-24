@@ -30,15 +30,18 @@ Route::get('/schools', function () {
     return view('school-list');
 });
 
+
 Route::get('/', [HeaderController::class, 'index'])->name('/');
 Route::get('/schools/ID', [SchoollistController::class, 'index'])->name('/schools/ID');
 Route::get('/schools/ID', function () {
     return view('school-details');
 })->name('schools/ID');
 
-Route::get('/school-book', function () {
+Route::get('/schools/{school_id}/book', function () {
     return view('school-book');
-})->name('school-book');
+})->name('/schools/{school_id}/book');
+
+
 
 
 Route::middleware('auth')->group(function () {

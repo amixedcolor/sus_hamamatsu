@@ -7,13 +7,13 @@
 
     <div class="py-10 text-center">
         <h2 class="font-bold text-xl inline-block relative inline-block bg-orange-500 text-white p-2 rounded">
-            {{ __('浜松市立第一小学校') }}
+            {{ $school->namespace }}
         </h2>
     </div>
 
     <div class="container mx-auto w-96 h-96 bg-slate-600">
         <p class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            {{ __('校舎画像等') }}
+            {{ $school->image }}
         </p>
     </div>
 
@@ -25,7 +25,7 @@
         <br>
         <br>
         <p class="font-bold text-base mx-24">
-            5000円
+            {{$school->price_per_hour}}
         </p>
     </div>
 
@@ -37,7 +37,7 @@
         <br>
         <br>
         <p class="font-bold text-base mx-24">
-            設備設備設備設備設備
+            設備情報
         </p>
     </div>
 
@@ -49,7 +49,7 @@
         <br>
         <br>
         <p class="font-bold text-base mx-24">
-            X〜Y
+            {{$school->rentable_time_start}} ~ {{$school->rentable_time_end}}
         </p>
     </div>
 
@@ -61,7 +61,7 @@
         <br>
         <br>
         <p class="font-bold text-base mx-24">
-            ○○○-○○○○-○○○○
+            {{$school->contact}}
         </p>
     </div>
 
@@ -73,13 +73,13 @@
         <br>
         <br>
         <p class="font-bold text-base mx-24">
-            備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考備考
+            {{$school->terms}}
         </p>
     </div>
 
     <div class="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8">
         <div class="my-4 text-center">
-        <a href="{{ route('school-book') }}" class="font-bold rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-orange-600 active:shadow-none shadow-lg bg-gradient-to-tr from-orange-600 to-orange-500 border-orange-700 text-white">
+        <a href="{{ route('schools/ID/book', ['school_id'=>'5']) }}" class="font-bold rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-orange-600 active:shadow-none shadow-lg bg-gradient-to-tr from-orange-600 to-orange-500 border-orange-700 text-white">
         <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
         <span class="relative">{{ __('予約する') }}</span>
         </a>
