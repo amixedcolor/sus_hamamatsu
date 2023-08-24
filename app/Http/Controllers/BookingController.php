@@ -18,8 +18,8 @@ class BookingController extends Controller
         $booking->phone_number = $params['phone_number'];
         $booking->email = $params['email'];
         $booking->date = $params['date'];
-        $booking->time_start = $params['time_start'];
-        $booking->time_end = $params['time_end'];
+        $booking->time_start = $params['time_start'] . ':00';
+        $booking->time_end = $params['time_end'] . ':00';
         $booking->purpose_of_use = $params['purpose_of_use'];
         $booking->details = $params['details'];
 
