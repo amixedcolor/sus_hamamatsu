@@ -56,9 +56,7 @@
         </h3>
         <br>
         <br>
-        <p class="font-bold text-base mx-24">
-            {{$school->contact}}
-        </p>
+        <pre class="font-bold text-base mx-24 font-sans">{{$school->contact}}</pre>
     </div>
 
     <div class="mb-4">
@@ -68,9 +66,7 @@
         </h3>
         <br>
         <br>
-        <p class="font-bold text-base mx-24">
-            {{$school->terms}}
-        </p>
+        <pre class="font-bold text-base mx-24 whitespace-pre-wrap font-sans">{{$school->note}}</pre>
     </div>
 
     <div class="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8">

@@ -120,13 +120,14 @@
                             </div>
                         </div>
 
-                        <div class="flex mt-4 justify-center">
-                            <form>
-                                <p><input type="checkbox" id="consent-chk" name="consent-chk">
-                                    <label class="text-center text-lg font-bold">同意する</label>
-                                </p>
-                            </form>
-                        </div>
+                        <br class="col-span-2">
+
+                        <h2 for="title" class="font-bold text-xl inline-block relative inline-block col-span-2">
+                            利用規約
+                            <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
+                        </h2>
+
+                        <pre class="bg-white p-16 rounded shadow-md text-lg font-bold whitespace-pre-wrap font-sans col-span-2">{{ $school->terms }}</pre>
 
                         <div class="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8">
                             <div class="my-4 text-center">
