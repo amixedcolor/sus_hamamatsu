@@ -21,7 +21,7 @@
         <br>
         <br>
         <p class="font-bold text-base mx-24">
-            {{$school->price_per_hour}}
+            {{number_format($school->price_per_hour)}}円
         </p>
     </div>
 
@@ -45,7 +45,7 @@
         <br>
         <br>
         <p class="font-bold text-base mx-24">
-            {{$school->rentable_time_start}} ~ {{$school->rentable_time_end}}
+            {{date_format(date_create($school->rentable_time_start), 'h:i')}} ~ {{date_format(date_create($school->rentable_time_end), 'h:i')}}
         </p>
     </div>
 

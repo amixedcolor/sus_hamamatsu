@@ -37,7 +37,7 @@
                                 {{ $school->name }}
                             </h3>
                             <p class="mx-8 text-xl">
-                                {{ $school->price_per_hour }}円/時
+                                {{ number_format($school->price_per_hour) }}円/時
                             <p>
                         </div>
                     </a>
