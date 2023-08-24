@@ -33,8 +33,12 @@
                                 border:1px solid black;
                                 background-image:url({{ $school->schoolImages->first()?->convertToBase64() ?? '' }});
                                 ">
+                            <p class="mx-8 mt-2 text-3xl">
                                 {{ $school->name }}
-                            </h2>
+                            </h3>
+                            <p class="mx-8 text-xl">
+                                {{ $school->price_per_hour }}円/時
+                            <p>
                         </div>
                     </a>
                 @endforeach
