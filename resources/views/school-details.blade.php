@@ -11,11 +11,7 @@
         </h2>
     </div>
 
-    <div class="container mx-auto w-96 h-96 bg-slate-600">
-        <p class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            {{ $school->image }}
-        </p>
-    </div>
+    <div class="container mx-auto w-96 h-96 bg-slate-600" style="background-image: url({{ $school->schoolImages->first()?->convertToBase64() }})"></div>
 
     <div class="py-10 text-left">
         <h3 class="font-bold text-xl inline-block relative inline-block mx-24">
@@ -25,7 +21,7 @@
         <br>
         <br>
         <p class="font-bold text-base mx-24">
-            {{$school->price_per_hour}}
+            {{number_format($school->price_per_hour)}}円
         </p>
     </div>
 
@@ -36,9 +32,22 @@
         </h3>
         <br>
         <br>
-        <p class="font-bold text-base mx-24">
-            {{$school->facility}}
-        </p>
+        <div class="mx-24">
+            <div class="flex flex-row-reverse w-fit items-center gap-x-3">
+                <p class="font-bold text-lg m-0">体育館</p>
+                <input type="checkbox" disabled {{ $school->facility->is_having_gym ? 'checked' : '' }}>
+            </div>
+
+            <div class="flex flex-row-reverse w-fit items-center gap-x-3">
+                <p class="font-bold text-lg m-0">運動場</p>
+                <input type="checkbox" disabled {{ $school->facility->is_having_ground ? 'checked' : '' }}>
+            </div>
+
+            <div class="flex flex-row-reverse w-fit items-center gap-x-3">
+                <p class="font-bold text-lg m-0">駐車場</p>
+                <input type="checkbox" disabled {{ $school->facility->is_having_parking ? 'checked' : '' }}>
+            </div>
+        </div>
     </div>
 
     <div class="py-10 text-left">
@@ -49,7 +58,7 @@
         <br>
         <br>
         <p class="font-bold text-base mx-24">
-            {{$school->rentable_time_start}} ~ {{$school->rentable_time_end}}
+            {{date_format(date_create($school->rentable_time_start), 'h:i')}} ~ {{date_format(date_create($school->rentable_time_end), 'h:i')}}
         </p>
     </div>
 
@@ -60,9 +69,7 @@
         </h3>
         <br>
         <br>
-        <p class="font-bold text-base mx-24">
-            {{$school->contact}}
-        </p>
+        <pre class="font-bold text-base mx-24 font-sans">{{$school->contact}}</pre>
     </div>
 
     <div class="mb-4">
@@ -72,9 +79,7 @@
         </h3>
         <br>
         <br>
-        <p class="font-bold text-base mx-24">
-            {{$school->terms}}
-        </p>
+        <pre class="font-bold text-base mx-24 whitespace-pre-wrap font-sans">{{$school->note}}</pre>
     </div>
 
     <div class="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8">
