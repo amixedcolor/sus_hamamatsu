@@ -86,9 +86,7 @@
                             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
                         </h2>
 
-                        <div class="bg-white p-16 rounded shadow-md col-span-2">
-                            <p class="text-center text-lg font-bold">{{ $school->terms }}</p>
-                        </div>
+                        <pre class="bg-white p-16 rounded shadow-md text-lg font-bold whitespace-pre-wrap font-sans col-span-2">{{ $school->terms }}</pre>
 
                         <div class="flex flex-row-reverse w-fit gap-x-3 items-center mx-auto col-span-2">
                             <label class="text-center text-lg font-bold">同意する</label>
