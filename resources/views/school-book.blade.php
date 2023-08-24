@@ -128,6 +128,15 @@
                             </form>
                         </div>
 
+                        <div class="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8">
+                            <div class="my-4 text-center">
+                                <a href="{{ route('home') }}" class="font-bold rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border- gray-600 active:shadow-none shadow-lg bg-gradient-to-tr from-gray-600 to-gray-500 border-gray-700 text-white">
+                                    <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+                                        <span class="relative">{{ __('予約確認画面へ') }}</span>
+                                </a>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
