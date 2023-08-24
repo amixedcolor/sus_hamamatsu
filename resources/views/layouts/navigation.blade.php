@@ -7,7 +7,8 @@
             <h2 style="
             padding:10px 0 12px 30px;
             color:white;
-            font-size:40px
+            font-size:40px;
+            font-weight:bold
             ">
                 廃校舎検索プラットフォーム
             </h2>

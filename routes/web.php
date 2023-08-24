@@ -33,15 +33,18 @@ Route::get('/home', function () {
 
 Route::get('/schools', [SchoolController::class, 'index'])->name('schools');
 
-Route::get('/', [HeaderController::class, 'index'])->name('/');
-Route::get('/schools/ID', [SchoollistController::class, 'index'])->name('/schools/ID');
-Route::get('/schools/ID', function () {
-    return view('school-details');
-})->name('schools/ID');
 
 Route::get('/schools/{id}/booking-creation', function (string $id) {
     return view('school-book', ['school' => School::find($id)]);
 })->name('school-book-creation');
+Route::get('/', [HeaderController::class, 'index'])->name('/');
+// Route::get('/schools/{id}', function () {
+//     return view('school-details');
+// })->name('schools.id');
+Route::get('/schools/{id}', [SchoolController::class, 'show'])->name('school.show');
+
+
+
 
 Route::post('/schools/{id}/booking-confirmation', function (Request $req, string $id) {
     return view('school-book-confirm', ['school' => School::find($id), 'params' => $req->request->all()]);
