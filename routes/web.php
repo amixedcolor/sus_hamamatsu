@@ -31,14 +31,11 @@ Route::get('/schools', [SchoolController::class, 'index'])->name('schools');
 
 
 Route::get('/', [HeaderController::class, 'index'])->name('/');
-Route::get('/schools/ID', [SchoollistController::class, 'index'])->name('/schools/ID');
-Route::get('/schools/ID', function () {
-    return view('school-details');
-})->name('schools/ID');
+// Route::get('/schools/{id}', function () {
+//     return view('school-details');
+// })->name('schools.id');
+Route::get('/schools/{id}', [SchoolController::class, 'show'])->name('school.show');
 
-Route::get('/schools/{school_id}/book', function () {
-    return view('school-book');
-})->name('/schools/{school_id}/book');
 
 
 
