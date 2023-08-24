@@ -7,7 +7,7 @@
 
     <div class="py-10 text-center">
         <h2 class="font-bold text-xl inline-block relative inline-block bg-orange-500 text-white p-2 rounded">
-            {{ $school->namespace }}
+            {{ $school->name}}
         </h2>
     </div>
 
