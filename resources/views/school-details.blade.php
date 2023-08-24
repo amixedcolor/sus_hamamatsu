@@ -37,7 +37,7 @@
         <br>
         <br>
         <p class="font-bold text-base mx-24">
-            設備情報
+            {{$school->facility}}
         </p>
     </div>
 

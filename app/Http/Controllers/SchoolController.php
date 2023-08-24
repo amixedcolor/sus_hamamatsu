@@ -14,7 +14,8 @@ class SchoolController extends Controller
     
     public function show($id)
     {
-        $school_d = School::with(['schoolImages'])->Find($id);
+        $school_d = School::with(['schoolImages','facility'])->Find($id);
+        // dd($school_d);
         return view('school-details', ['school' => $school_d]);
     }
 }
