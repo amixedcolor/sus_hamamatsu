@@ -7,7 +7,7 @@
 
     <div class="py-10 text-center">
         <h2 class="font-bold text-xl inline-block relative inline-block mx-24">
-            {{ __('浜松市立第一小学校') }}のご予約
+            {{ $school->name }}のご予約
             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </h2>
     </div>
@@ -16,127 +16,96 @@
         <div class="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8">
             <div class="my-4">
                 <div class="bg-white shadow p-6 rounded-lg">
-                    <form action="{{ route('post.store') }}" method="post">
+                    <form method="POST" action="./booking-confirmation" class="grid grid-cols-[1fr_3fr] gap-x-8 gap-y-6">
                         @csrf
-                        <div class="mb-4">
-                            <label for="title" class="font-bold text-xl inline-block relative inline-block">利用者様情報
-                                <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
-                            </label>
-                            <br><br>
-                            <div class="flex flex-col space-y-4">
-                                <div class="flex items-center">
-                                    <p class="font-bold text-lg mr-2">氏名</p>
-                                    <input type="text" class="border rounded p-1" placeholder="テキストを追加">
-                                </div>
-                                <div class="flex items-center">
-                                    <p class="font-bold text-lg mr-2">電話番号</p>
-                                    <input type="phone" class="border rounded p-1" placeholder="テキストを追加">
-                                </div>
-                                <div class="flex items-center">
-                                    <p class="font-bold text-lg mr-2">E-mail</p>
-                                    <input type="email" class="border rounded p-1" placeholder="テキストを追加">
-                                </div>
-                            </div>
-                            <br><br>
-                        </div>
-                        <div class="mb-4">
-                            <label for="title" class="font-bold text-xl inline-block relative inline-block">利用計画
-                                <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
-                            </label>
-                            <br><br>
 
-                            <div class="flex items-center">
-                                <p class="font-bold text-lg mr-2">日付</p>
-                                <form>
-                                    <select name="month" class="mr-6">
-                                        @for ($i = 1; $i <= 12; $i++)
-                                            <option value="{{ $i }}">{{ $i }}月</option>
-                                        @endfor
-                                    </select>
-                                    <select name="day">
-                                        @for ($i = 1; $i <= 31; $i++)
-                                            <option value="{{ $i }}">{{ $i }}日</option>
-                                        @endfor
-                                    </select>
-                                </form>
-                            </div>
-                            <br><br>
-                            <div class="flex items-center">
-                                <p class="font-bold text-lg mr-2">時間帯</p>
-                                <form>
-                                    <select name="month">
-                                        @for ($i = 0; $i <= 23; $i++)
-                                            <option value="{{ $i }}">{{ $i }}時</option>
-                                        @endfor
-                                    </select>
-                                    <span class="whitespace-no-wrap">〜</span>
-                                    <select name="day">
-                                        @for ($i = 0; $i <= 23; $i++)
-                                            <option value="{{ $i }}">{{ $i }}時</option>
-                                        @endfor
-                                    </select>
-                                </form>
-                            </div>
-                            <br>
-                            <div class="flex items-center">
-                                <p class="font-bold text-lg mr-2">利用目的</p>
-                                <form method="post" action="">
-                                    <select name="state">
-                                        <option value="1">スポーツ</option>
-                                        <option value="2">勉強会</option>
-                                        <option value="3">会議</option>
-                                        <option value="4">アート</option>
-                                        <option value="5">地域独自イベント</option>
-                                    </select>
-                                </form>
-                            </div>
-                            <br>
-                            <div class="flex items-center">
-                                <p class="font-bold text-lg mr-2">利用目的詳細</p>
-                                <textarea name="body" id="body" rows="6" class="w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required></textarea>
-                            </div>
-                            <br>
-                            <div class="flex items-center">
-                                <p class="font-bold text-lg mr-10">利用設備</p>
-                                <p class="font-bold text-lg mr-2">校舎</p>
-                                <input type="checkbox" name="facilities[]" value="校舎" class="mr-6"><br>
-                                <p class="font-bold text-lg mr-2">運動場</p>
-                                <input type="checkbox" name="facilities[]" value="運動場" class="mr-6">
-                                <p class="font-bold text-lg mr-2">体育館</p>
-                                <input type="checkbox" name="facilities[]" value="体育館" class="mr-6">
-                                <p class="font-bold text-lg mr-2">駐車場</p>
-                                <input type="checkbox" name="facilities[]" value="駐車場">
-                            </div>
-                            <br>
-                            <div class="flex items-center">
-                                <label for="title" class="font-bold text-xl inline-block relative inline-block">利用規約
-                                    <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
-                                </label>
-                            </div>
+                        <h2 class="font-bold text-xl inline-block relative inline-block col-span-2">
+                            利用者様情報
+                            <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
+                        </h2>
+
+                        <label class="font-bold text-lg mr-2">氏名</label>
+                        <input type="text" name="customer_name" class="border rounded p-1" placeholder="静岡太郎" required>
+
+                        <label class="font-bold text-lg mr-2">電話番号</label>
+                        <input type="tell" name="phone_number" class="border rounded p-1" placeholder="000-0000-0000" required>
+
+                        <label class="font-bold text-lg mr-2">E-mail</label>
+                        <input type="email" name="email" class="border rounded p-1" placeholder="me@example.com" required>
+
+                        <br class="col-span-2">
+
+                        <h2 for="title" class="font-bold text-xl inline-block relative inline-block col-span-2">
+                            利用計画
+                            <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
+                        </h2>
+
+                        <label class="font-bold text-lg mr-2">日付</label>
+                        <input type="date" name="date" required>
+
+                        <label class="font-bold text-lg mr-2">時間帯</label>
+                        <div>
+                            <input type="number" name="time_start" class="w-16 mr-2" min="0" max="23" required>時 〜 <input type="number" name="time_end" class="w-16 mx-2" min="0" max="23" required>時
                         </div>
-                        <div class="flex items-center justify-center mt-4">
-                            <div class="bg-white p-16 rounded shadow-md">
-                                <p class="text-center text-lg font-bold">利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約利用規約</p>
+
+                        <label class="font-bold text-lg mr-2">利用目的</label>
+                        <select class="border rounded p-1" name="purpose_of_use">
+                            <option selected></option>
+                            <option>スポーツ</option>
+                            <option>勉強会</option>
+                            <option>会議</option>
+                            <option>アート</option>
+                            <option>地域独自イベント</option>
+                        </select>
+
+                        <label class="inline font-bold text-lg mr-4"><p class="w-fit">利用目的<br>(詳細)</p></label>
+                        <textarea rows="6" name="details" class="inline border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:border-indigo-500" required></textarea>
+
+                        <p class="font-bold text-lg">利用設備</p>
+                        <div>
+                            <div class="flex flex-row-reverse w-fit items-center gap-x-3">
+                                <label class="font-bold text-lg">体育館</label>
+                                <input type="checkbox" name="selectedFacility.is_having_gym">
+                            </div>
+
+                            <div class="flex flex-row-reverse w-fit items-center gap-x-3">
+                                <label class="font-bold text-lg">運動場</label>
+                                <input type="checkbox" name="selectedFacility.is_having_ground">
+                            </div>
+
+                            <div class="flex flex-row-reverse w-fit items-center gap-x-3">
+                                <label class="font-bold text-lg">駐車場</label>
+                                <input type="checkbox" name="selectedFacility.is_having_parking">
                             </div>
                         </div>
 
-                        <div class="flex mt-4 justify-center">
-                            <form>
-                                <p><input type="checkbox" id="consent-chk" name="consent-chk">
-                                    <label class="text-center text-lg font-bold">同意する</label>
-                                </p>
-                            </form>
+                        <br class="col-span-2">
+
+                        <h2 for="title" class="font-bold text-xl inline-block relative inline-block col-span-2">
+                            利用規約
+                            <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
+                        </h2>
+
+                        <div class="bg-white p-16 rounded shadow-md col-span-2">
+                            <p class="text-center text-lg font-bold">{{ $school->terms }}</p>
                         </div>
 
-                        <div class="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8">
-                            <div class="my-4 text-center">
-                                <a href="{{ route('home') }}" class="font-bold rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border- gray-600 active:shadow-none shadow-lg bg-gradient-to-tr from-gray-600 to-gray-500 border-gray-700 text-white">
-                                    <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-                                        <span class="relative">{{ __('予約確認画面へ') }}</span>
-                                </a>
-                            </div>
+                        <div class="flex flex-row-reverse w-fit gap-x-3 items-center mx-auto col-span-2">
+                            <label class="text-center text-lg font-bold">同意する</label>
+                            <input type="checkbox" id="consent-chk" required>
                         </div>
 
+                        <script>
+                            document.getElementById("consent-chk").addEventListener("change", function() {
+                                document.getElementById("submit-btn").disabled = !this.checked;
+                            }, false);
+                        </script>
+
+                        <br class="col-span-2">
+
+                        <div class="mx-auto col-span-2">
+                            <input type="submit" id="submit-btn" disabled="true" value="予約確認画面へ" class="font-bold rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border- gray-600 disabled:cursor-not-allowed active:shadow-none shadow-lg bg-gradient-to-tr from-gray-600 to-gray-500 border-gray-700 text-white">
+                        </div>
                     </form>
                 </div>
             </div>

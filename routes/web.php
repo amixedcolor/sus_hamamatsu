@@ -1,11 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\SchoollistController;
 use App\Http\Controllers\HeaderController;
+use App\Models\School;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,23 +26,24 @@ Route::get('/', function () {
     return view('home');
 });
 
-
 Route::get('/home', function () {
     return view('home');
 })->name('home');
 
 Route::get('/schools', [SchoolController::class, 'index'])->name('schools');
 
-
-Route::get('/', [HeaderController::class, 'index'])->name('/');
-// Route::get('/schools/{id}', function () {
-//     return view('school-details');
-// })->name('schools.id');
 Route::get('/schools/{id}', [SchoolController::class, 'show'])->name('school.show');
 
+Route::get('/schools/{id}/booking-creation', function (string $id) {
+    return view('school-book', ['school' => School::find($id)]);
+})->name('school-book-creation');
+Route::get('/', [HeaderController::class, 'index'])->name('/');
 
+Route::post('/schools/{id}/booking-confirmation', function (Request $req, string $id) {
+    return view('school-book-confirm', ['school' => School::find($id), 'params' => $req->request->all()]);
+})->name('school-book-confirmation');
 
-
+Route::post('/schools/{id}/booking-completion', [BookingController::class, 'store'])->name('school-book-completion');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
