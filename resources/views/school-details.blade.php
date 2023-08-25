@@ -7,7 +7,7 @@
 
     <div class="py-10 text-center">
         <h2 class="font-bold text-3xl inline-block relative inline-block bg-orange-500 text-white p-2 rounded">
-            {{ __('浜松市立第一小学校') }}
+            {{ $school->name }}
         </h2>
     </div>
 
