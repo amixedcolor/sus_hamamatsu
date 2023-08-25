@@ -14,14 +14,14 @@
         </h3>
     </div>
     <div class="flex justify-center pt-12 pb-4 relative z-10">
-        <a href="{{ url('question-of-third') }}" class="inline-flex items-center justify-center w-full h-48 text-4xl font-bold leading-6 text-white bg-orange-500 border border-transparent rounded-full md:w-auto hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 no-underline mx-5">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5万円&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以下&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/question-of-third" class="recommend-circle-1">
+            5万円<br>以下
         </a>
-        <a href="{{ url('question-of-third') }}" class="inline-flex items-center justify-center w-full h-48 text-4xl font-bold leading-6 text-white bg-blue-500 border border-transparent rounded-full md:w-auto hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 no-underline mx-5">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10万円&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;くらい&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/question-of-third" class="recommend-circle-2">
+            10万円<br>くらい
         </a>
-        <a href="{{ url('question-of-third') }}" class="inline-flex items-center justify-center w-full h-48 text-4xl font-bold leading-6 text-white bg-green-500 border border-transparent rounded-full md:w-auto hover:bg-green-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 no-underline mx-5">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15万円&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/question-of-third" class="recommend-circle-3">
+            15万円<br>以上
         </a>
     </div>
 </div>
