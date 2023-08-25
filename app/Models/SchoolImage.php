@@ -20,6 +20,6 @@ class SchoolImage extends Model
     }
 
     public function convertToBase64(): string {
-        return 'data:image/png;base64,' . base64_encode($this->data);
+        return 'data:image/avif;base64,' . base64_encode($this->data);
     }
 }
