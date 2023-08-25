@@ -14,11 +14,11 @@
         </h3>
     </div>
     <div class="flex justify-center pt-12 pb-4 relative z-10">
-    <a href="{{ url('question-of-fifth') }}" class="inline-flex items-center justify-center w-full h-44 text-4xl font-bold leading-6 text-white bg-orange-500 border border-transparent rounded-full md:w-auto hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 no-underline mx-5">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;初めて&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/question-of-fifth" class="recommend-circle-1">
+            初めて
         </a>
-        <a href="{{ url('/school-details/0') }}" class="inline-flex items-center justify-center w-full h-44 text-4xl font-bold leading-6 text-white bg-blue-500 border border-transparent rounded-full md:w-auto hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 no-underline mx-5">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;複数回&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/schools/1"         class="recommend-circle-2">
+            複数回
         </a>
     </div>
 </div>

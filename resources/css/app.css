@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .recommend-circle-1 {
+        @apply flex items-center justify-center text-center w-48 h-48 text-4xl font-bold text-white no-underline mx-12 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 hover:bg-orange-400 focus:ring-orange-600;
+    }
+
+    .recommend-circle-2 {
+        @apply flex items-center justify-center text-center w-48 h-48 text-4xl font-bold text-white no-underline mx-12 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 bg-blue-500   hover:bg-blue-400   focus:ring-blue-600;
+
+    }
+
+    .recommend-circle-3 {
+        @apply flex items-center justify-center text-center w-48 h-48 text-4xl font-bold text-white no-underline mx-12 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 bg-green-500  hover:bg-green-400  focus:ring-green-600;
+    }
+}
