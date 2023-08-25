@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" >
-    
+
     <!-- Primary Navigation Menu -->
-        
+
         <div class="flex justify-between h-16 bg-orange-600 pl-10">
         <a href="{{ url('/') }}" style="text-decoration: none;">
             <h2 style="
@@ -10,12 +10,12 @@
             font-size:40px;
             font-weight:bold
             ">
-                廃校に行こう!
+                廃校に行こう！
             </h2>
         </a>
-            
-        
-        
+
+
+
             <!-- ハンバーガーについて　-->
             <!-- Hamburger -->
             <!--<div class="-mr-2 flex items-center sm:hidden">
