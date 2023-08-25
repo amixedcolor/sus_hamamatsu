@@ -31,6 +31,10 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+Route::get('/held-events', function () {
+    return view('event-list');
+})->name('/held-events');
+
 Route::get('/schools', [SchoolController::class, 'index'])->name('schools');
 
 Route::get('/schools/{id}', [SchoolController::class, 'show'])->name('school.show');
