@@ -1,5 +1,4 @@
 <x-app-layout>
-
 <div class="relative bg-gray-200 p-4 rounded-md w-3/4 mx-auto my-8">
     <div class="absolute inset-0 bg-white opacity-80 shadow-lg rounded-md border-8 border-orange-500 w-100"></div>
     <div class="py-10 text-left relative z-10">
