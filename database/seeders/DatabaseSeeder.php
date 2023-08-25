@@ -13,18 +13,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Models\School::factory(10)
+        $schools = Models\School::factory(10)
             ->has(Models\SchoolImage::factory(1))
             ->has(Models\Facility::factory(1))
             ->create();
 
-        $bookings = Models\Booking::factory(10)
-            ->has(Models\SelectedFacility::factory(1))
-            ->create();
+        for ($i = 0; $i < 10; $i++) {
+            $bookings = Models\Booking::factory(1)
+                ->has(Models\SelectedFacility::factory(1))
+                ->create(['school_id' => $schools[$i]->id]);
 
-        Models\HeldEvent::factory(10)
-            ->has(Models\HeldEventImage::factory(1))
-            ->hasAttached($bookings)
-            ->create();
+            $heldEvents = Models\HeldEvent::factory(1)
+                ->has(Models\HeldEventImage::factory(1))
+                ->hasAttached($bookings)
+                ->has()
+                ->create(['school_id' => $schools[$i]->id]);
+        }
     }
 }
