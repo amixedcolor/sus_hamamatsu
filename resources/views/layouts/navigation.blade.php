@@ -10,7 +10,7 @@
             font-size:40px;
             font-weight:bold
             ">
-                廃校舎検索プラットフォーム
+                廃校に行こう!
             </h2>
         </a>
             
