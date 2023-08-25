@@ -72,6 +72,10 @@ Route::post('/schools/{id}/booking-completion', [BookingController::class, 'stor
 
 Route::get('/held-events', [HeldEventController::class, 'index'])->name('held-events');
 
+Route::get('/articles/{id}', function (string $id) {
+    return view('articles/' . $id);
+})->name('article');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
