@@ -16,14 +16,9 @@ class SchoolImageFactory extends Factory
      */
     public function definition(): array
     {
-        $path = fake()->image(null, 1920, 1080, 'school');
-        $bin = file_get_contents($path);
-
-        unlink($path);
-
         return [
             'school_id' => \App\Models\School::factory(),
-            'data' => $bin,
+            'data' => file_get_contents('/var/www/html/database/factories/school_imgs/' . rand(0, 9) . '.avif'),
         ];
     }
 }
