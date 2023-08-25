@@ -8,6 +8,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\SchoollistController;
+use App\Http\Controllers\HeldEventController;
 use App\Http\Controllers\HeaderController;
 use App\Models\School;
 
@@ -65,6 +66,7 @@ Route::get('/school-details/0', function () {
 
 Route::post('/schools/{id}/booking-completion', [BookingController::class, 'store'])->name('school-book-completion');
 
+Route::get('/held-events', [HeldEventController::class, 'index'])->name('held-events');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
