@@ -17,7 +17,7 @@
         <a href="/question-of-fifth" class="recommend-circle-1">
             初めて
         </a>
-        <a href="/schools/0"         class="recommend-circle-2">
+        <a href="/schools/1"         class="recommend-circle-2">
             複数回
         </a>
     </div>
