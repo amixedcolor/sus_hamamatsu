@@ -18,4 +18,8 @@ class HeldEventImage extends Model
     public function heldEvent(): BelongsTo {
         return $this->belongsTo(HeldEvent::class);
     }
+
+    public function convertToBase64(): string {
+        return 'data:image/png;base64,' . base64_encode($this->data);
+    }
 }

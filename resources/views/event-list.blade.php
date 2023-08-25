@@ -31,14 +31,16 @@
                                 margin:25px 25px 0 25px;
                                 width:350px; height:230px;
                                 border:1px solid black;
-                                background-image:url({{ $school->schoolImages->first()?->convertToBase64() ?? '' }});
+                                background-image:url({{ $heldEvents->heldEventImages->first()?->convertToBase64() ?? '' }});
                                 ">
                             <p class="mx-8 mt-2 text-3xl">
-                                {{ $school->name }}
+                                {{ $heldEvents->title }}
                             </h3>
-                            <p class="mx-8 text-xl">
-                                {{ number_format($school->price_per_hour) }}円/時
-                            <p>
+                            
+                            //     <p class="mx-8 text-xl">
+                            //     {{ number_format($school->price_per_hour) }}円/時
+                            //  <p>
+                            
                         </div>
                     </a>
                 @endforeach
