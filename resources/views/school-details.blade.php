@@ -11,7 +11,7 @@
         </h2>
     </div>
 
-    <img class="container mx-auto w-96 h-96" src="{{ $school->schoolImages->first()?->convertToBase64() }}">
+    <img class="container mx-auto w-96 h-96 object-cover" src="{{ $school->schoolImages->first()?->convertToBase64() }}">
 
     <div class="py-10 text-left">
         <h3 class="font-bold text-2xl inline-block relative inline-block mx-24">
