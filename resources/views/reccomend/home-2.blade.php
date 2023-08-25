@@ -35,5 +35,14 @@
                 </a>
             </div>
         </div>
+
+        <div class="max-w-7xl mt-28 mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <a href="{{ url('/held-events') }}" class="bg-white border-b border-gray-200 p-6 block w-full text-center
+                font-semibold text-gray-800 text-2xl hover:bg-gray-100 text-decoration-none">
+                    過去に開催されたイベントの一覧はこちら
+                </a>
+            </div>
+        </div>
     </div>
 </x-app-layout>
