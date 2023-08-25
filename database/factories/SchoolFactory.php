@@ -17,11 +17,11 @@ class SchoolFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'price_per_hour' => fake()->randomNumber(5),
+            'name' => fake()->city() . '立' . str_replace('市', '', fake()->city()) . ['小学', '中学', '高等学'][rand(0, 2)] . '校',
+            'price_per_hour' => fake()->randomNumber(4) / 2,
             'rentable_time_start' => fake()->time('H:i'),
             'rentable_time_end' => fake()->time('H:i'),
-            'contact' => '電話番号: ' . fake()->phoneNumber() . "\n" . 'E-mail: ' . fake()->email(),
+            'contact' => '担当者: ' . fake()->kanaName() . "\n" . '電話番号: ' . fake()->phoneNumber() . "\n" . 'E-mail: ' . fake()->email(),
             'terms' => fake()->text(2048),
             'note' => fake()->text(512),
         ];

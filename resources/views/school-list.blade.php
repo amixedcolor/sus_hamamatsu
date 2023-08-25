@@ -26,13 +26,10 @@
                         width:400px; height:400px;
                         border:1px solid black;
                         ">
-                            <img style="
-                                padding:230px 0 0 0;
-                                margin:25px 25px 0 25px;
-                                width:350px; height:230px;
-                                border:1px solid black;
-                                background-image:url({{ $school->schoolImages->first()?->convertToBase64() ?? '' }});
-                                ">
+                            <img
+                                style="margin:25px 25px 0 25px;width:350px; height:230px;border:1px solid black;"
+                                src="{{ $school->schoolImages->first()?->convertToBase64() ?? '' }}"
+                            >
                             <p class="mx-8 mt-2 text-3xl">
                                 {{ $school->name }}
                             </h3>
