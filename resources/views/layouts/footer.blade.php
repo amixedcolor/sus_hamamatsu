@@ -1,5 +1,5 @@
 <div class="flex justify-center items-center h-16 border bg-orange-600 mt-32">
-    <p class="font-semibold text-center text-xl text-white leading-tight pt-3">廃校舎検索プラットフォーム</p>
+    <p class="font-semibold text-center text-xl text-white leading-tight pt-3">廃校に行こう！</p>
 </div>
 
 <div class="flex justify-center items-center h-32 border bg-white">
