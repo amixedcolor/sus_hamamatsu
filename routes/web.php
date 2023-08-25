@@ -43,7 +43,28 @@ Route::post('/schools/{id}/booking-confirmation', function (Request $req, string
     return view('school-book-confirm', ['school' => School::find($id), 'params' => $req->request->all()]);
 })->name('school-book-confirmation');
 
+Route::get('/question-of-second', function () {
+    return view('reccomend/home-2');
+})->name('question-of-second');
+
+Route::get('/question-of-third', function () {
+    return view('reccomend/home-3');
+})->name('question-of-third');
+
+Route::get('/question-of-fourth', function () {
+    return view('reccomend/home-4');
+})->name('question-of-fourth');
+
+Route::get('/question-of-fifth', function () {
+    return view('reccomend/home-5');
+})->name('question-of-fifth');
+
+Route::get('/school-details/0', function () {
+    return view('reccomend/reccomend-school-detail');
+})->name('school-details/0');
+
 Route::post('/schools/{id}/booking-completion', [BookingController::class, 'store'])->name('school-book-completion');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

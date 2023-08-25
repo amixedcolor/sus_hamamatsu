@@ -1,20 +1,20 @@
 <x-app-layout>
     <x-slot name="header">
-        <h1 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h1 class="font-semibold text-2xl text-gray-800 leading-tight">
             {{ __('校舎詳細表示') }}
         </h1>
     </x-slot>
 
     <div class="py-10 text-center">
-        <h2 class="font-bold text-xl inline-block relative inline-block bg-orange-500 text-white p-2 rounded">
-            {{ $school->name}}
+        <h2 class="font-bold text-3xl inline-block relative inline-block bg-orange-500 text-white p-2 rounded">
+            {{ __('浜松市立第一小学校') }}
         </h2>
     </div>
 
     <div class="container mx-auto w-96 h-96 bg-slate-600" style="background-image: url({{ $school->schoolImages->first()?->convertToBase64() }})"></div>
 
     <div class="py-10 text-left">
-        <h3 class="font-bold text-xl inline-block relative inline-block mx-24">
+        <h3 class="font-bold text-2xl inline-block relative inline-block mx-24">
         {{ __('費用（1時間）') }}
             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </h3>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="py-10 text-left">
-        <h3 class="font-bold text-xl inline-block relative inline-block mx-24">
+        <h3 class="font-bold text-2xl inline-block relative inline-block mx-24">
         {{ __('設備') }}
             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </h3>
@@ -51,7 +51,7 @@
     </div>
 
     <div class="py-10 text-left">
-        <h3 class="font-bold text-xl inline-block relative inline-block mx-24">
+        <h3 class="font-bold text-2xl inline-block relative inline-block mx-24">
         {{ __('貸出時間') }}
             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </h3>
@@ -63,7 +63,7 @@
     </div>
 
     <div class="py-10 text-left">
-        <h3 class="font-bold text-xl inline-block relative inline-block mx-24">
+        <h3 class="font-bold text-2xl inline-block relative inline-block mx-24">
         {{ __('連絡先') }}
             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </h3>
@@ -73,7 +73,7 @@
     </div>
 
     <div class="mb-4">
-        <h3 for="body" class="font-bold text-xl inline-block relative inline-block mx-24">
+        <h3 for="body" class="font-bold text-2xl inline-block relative inline-block mx-24">
             備考
             <span class="absolute h-1 w-full left-0 bottom-0 bg-orange-500"></span>
         </h3>
@@ -84,10 +84,10 @@
 
     <div class="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8">
         <div class="my-4 text-center">
-            <a href="{{ $school->id . '/booking-creation' }}" class="font-bold rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-orange-600 active:shadow-none shadow-lg bg-gradient-to-tr from-orange-600 to-orange-500 border-orange-700 text-white">
-                <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-                <span class="relative">{{ __('予約する') }}</span>
-            </a>
+        <a href="{{ route('school-book') }}" class="font-bold rounded relative inline-flex group items-center justify-center px-3.5 py-2 m-1 cursor-pointer border-b-4 border-l-2 active:border-orange-600 active:shadow-none shadow-lg bg-gradient-to-tr from-orange-600 to-orange-500 border-orange-700 text-white text-2xl no-underline">
+        <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
+        <span class="relative">{{ __('予約する') }}</span>
+        </a>
         </div>
     </div>
 </x-app-layout>
