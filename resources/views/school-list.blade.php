@@ -27,7 +27,7 @@
                         border:1px solid black;
                         ">
                             <img
-                                style="margin:25px 25px 0 25px;width:350px; height:230px;border:1px solid black;"
+                                style="margin:25px 25px 0 25px;width:350px; height:230px;border:1px solid black;object-fit: cover;"
                                 src="{{ $school->schoolImages->first()?->convertToBase64() ?? '' }}"
                             >
                             <p class="mx-8 mt-2 text-3xl">
